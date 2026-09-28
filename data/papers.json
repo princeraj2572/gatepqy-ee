@@ -1,0 +1,280 @@
+{
+  "archive": "https://drive.google.com/drive/folders/1xUn7rGTzKlfvJDoo4SzCRi8jRlBD63ud?usp=sharing",
+  "papers": [
+    {
+      "id": "2026-cs1",
+      "year": 2026,
+      "shift": "cs1",
+      "label": "CS-1 \u00b7 8 Feb 2026 \u00b7 Forenoon",
+      "paper": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS1.pdf",
+      "key": "https://gate2027.iitm.ac.in/static/doc/download/2026/Keys/CS1_Keys.pdf",
+      "source": "IIT Madras",
+      "verified": true,
+      "note": null
+    },
+    {
+      "id": "2026-cs2",
+      "year": 2026,
+      "shift": "cs2",
+      "label": "CS-2 \u00b7 8 Feb 2026 \u00b7 Afternoon",
+      "paper": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS2.pdf",
+      "key": "https://gate2027.iitm.ac.in/static/doc/download/2026/Keys/CS2_Keys.pdf",
+      "source": "IIT Madras",
+      "verified": true,
+      "note": null
+    },
+    {
+      "id": "2025-cs1",
+      "year": 2025,
+      "shift": "cs1",
+      "label": "CS-1 \u00b7 Forenoon",
+      "paper": "https://gate2027.iitm.ac.in/static/doc/download/2025/CS12025.pdf",
+      "key": "https://gate2027.iitm.ac.in/static/doc/download/2025_Key/CS1_Keys.pdf",
+      "source": "IIT Madras",
+      "verified": true,
+      "note": null
+    },
+    {
+      "id": "2025-cs2",
+      "year": 2025,
+      "shift": "cs2",
+      "label": "CS-2 \u00b7 Afternoon",
+      "paper": "https://gate2027.iitm.ac.in/static/doc/download/2025/CS22025.pdf",
+      "key": "https://gate2027.iitm.ac.in/static/doc/download/2025_Key/CS2_Keys.pdf",
+      "source": "IIT Madras",
+      "verified": true,
+      "note": null
+    },
+    {
+      "id": "2024-cs1",
+      "year": 2024,
+      "shift": "cs1",
+      "label": "CS-1 \u00b7 Session 5",
+      "paper": "https://gate2027.iitm.ac.in/static/doc/download/2024/CS124S5.pdf",
+      "key": "https://gate2027.iitm.ac.in/static/doc/download/2024/CS1FinalAnswerKey.pdf",
+      "source": "IIT Madras",
+      "verified": true,
+      "note": null
+    },
+    {
+      "id": "2024-cs2",
+      "year": 2024,
+      "shift": "cs2",
+      "label": "CS-2 \u00b7 Session 6",
+      "paper": "https://gate2027.iitm.ac.in/static/doc/download/2024/CS224S6.pdf",
+      "key": "https://gate2027.iitm.ac.in/static/doc/download/2024/CS2FinalAnswerKey.pdf",
+      "source": "IIT Madras",
+      "verified": true,
+      "note": null
+    },
+    {
+      "id": "2023-cs",
+      "year": 2023,
+      "shift": "cs",
+      "label": "Single paper",
+      "paper": "https://gate2027.iitm.ac.in/static/doc/download/2023/cs_2023.pdf",
+      "key": "https://gate2027.iitm.ac.in/static/doc/download/Answer_keys2023/CS_ANS_GATE2023.pdf",
+      "source": "IIT Madras",
+      "verified": true,
+      "note": null
+    },
+    {
+      "id": "2022-cs",
+      "year": 2022,
+      "shift": "cs",
+      "label": "Single paper",
+      "paper": "https://gate2027.iitm.ac.in/static/doc/download/2022/cs_2022.pdf",
+      "key": "https://gate2027.iitm.ac.in/static/doc/download/Answer_keys2022/cs_2022.pdf",
+      "source": "IIT Madras",
+      "verified": true,
+      "note": null
+    },
+    {
+      "id": "2021-cs1",
+      "year": 2021,
+      "shift": "cs1",
+      "label": "CS Set 1",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2021/cs1_2021.pdf",
+      "key": "https://gate2027.iitm.ac.in/static/doc/download/Answer_keys2021/cs_merged_2021.pdf",
+      "source": "IIT Kharagpur",
+      "verified": true,
+      "note": "Answer key file covers both sets"
+    },
+    {
+      "id": "2021-cs2",
+      "year": 2021,
+      "shift": "cs2",
+      "label": "CS Set 2",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2021/cs2_2021.pdf",
+      "key": "https://gate2027.iitm.ac.in/static/doc/download/Answer_keys2021/cs_merged_2021.pdf",
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": "Answer key file covers both sets"
+    },
+    {
+      "id": "2020-cs",
+      "year": 2020,
+      "shift": "cs",
+      "label": "Single paper",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2020/cs_2020.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": null
+    },
+    {
+      "id": "2019-cs",
+      "year": 2019,
+      "shift": "cs",
+      "label": "Single paper",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2019/cs_2019.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": true,
+      "note": null
+    },
+    {
+      "id": "2018-cs",
+      "year": 2018,
+      "shift": "cs",
+      "label": "Single paper",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2018/cs_2018.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": null
+    },
+    {
+      "id": "2017-cs1",
+      "year": 2017,
+      "shift": "cs1",
+      "label": "CS Set 1",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2017/cs1_2017.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": null
+    },
+    {
+      "id": "2017-cs2",
+      "year": 2017,
+      "shift": "cs2",
+      "label": "CS Set 2",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2017/cs2_2017.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": null
+    },
+    {
+      "id": "2016-cs1",
+      "year": 2016,
+      "shift": "cs1",
+      "label": "CS Set 1",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2016/cs1_2016.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": null
+    },
+    {
+      "id": "2016-cs2",
+      "year": 2016,
+      "shift": "cs2",
+      "label": "CS Set 2",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2016/cs2_2016.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": null
+    },
+    {
+      "id": "2015-cs1",
+      "year": 2015,
+      "shift": "cs1",
+      "label": "CS Set 1",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2015/cs1_2015.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": null
+    },
+    {
+      "id": "2015-cs2",
+      "year": 2015,
+      "shift": "cs2",
+      "label": "CS Set 2",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2015/cs2_2015.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": null
+    },
+    {
+      "id": "2015-cs3",
+      "year": 2015,
+      "shift": "cs3",
+      "label": "CS Set 3",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2015/cs3_2015.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": null
+    },
+    {
+      "id": "2014-cs1",
+      "year": 2014,
+      "shift": "cs1",
+      "label": "CS Set 1",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2014/cs1_2014.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": null
+    },
+    {
+      "id": "2014-cs2",
+      "year": 2014,
+      "shift": "cs2",
+      "label": "CS Set 2",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2014/cs2_2014.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": null
+    },
+    {
+      "id": "2014-cs3",
+      "year": 2014,
+      "shift": "cs3",
+      "label": "CS Set 3",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2014/cs3_2014.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": null
+    },
+    {
+      "id": "2013-cs",
+      "year": 2013,
+      "shift": "cs",
+      "label": "Single paper",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2013/cs_2013.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": null
+    },
+    {
+      "id": "2012-cs",
+      "year": 2012,
+      "shift": "cs",
+      "label": "Single paper",
+      "paper": "https://gate.iitkgp.ac.in/documents/gatepapers/2012/cs_2012.pdf",
+      "key": null,
+      "source": "IIT Kharagpur",
+      "verified": false,
+      "note": null
+    }
+  ]
+}
