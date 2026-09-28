@@ -1,12 +1,21 @@
-/* Monochrome study sheet: value and weight carry hierarchy, no accent hue. */
+/* Glassmorphic study sheet. Still black and grey: the glass is lit by
+   greyscale light pools, never colour. Panels sample what sits behind them,
+   so the fixed light layer on body::before is what makes the material read
+   as glass rather than as flat translucent boxes. */
 :root {
-  --black: #000000;
-  --coal: #0d0d0d;
-  --graphite: #171717;
-  --ash: #2b2b2b;
-  --steel: #3d3d3d;
-  --smoke: #8c8c8c;
-  --chalk: #f2f2f2;
+  --void: #050505;
+  --chalk: #f4f4f5;
+  --smoke: #9a9a9e;
+
+  /* Glass material */
+  --pane: rgba(255, 255, 255, 0.07);
+  --pane-strong: rgba(255, 255, 255, 0.11);
+  --pane-sunk: rgba(255, 255, 255, 0.025);
+  --edge: rgba(255, 255, 255, 0.14);
+  --edge-bright: rgba(255, 255, 255, 0.2);
+  --lip: rgba(255, 255, 255, 0.3);
+  --cast: 0 10px 30px rgba(0, 0, 0, 0.45);
+
   --ui: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   color-scheme: dark;
@@ -17,27 +26,45 @@ html, body { margin: 0; }
 html { -webkit-text-size-adjust: 100%; }
 
 body {
-  background: var(--black);
+  background: var(--void);
   color: var(--chalk);
   font-family: var(--ui);
   font-size: 15px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
 
-a { color: var(--chalk); text-underline-offset: 3px; text-decoration-color: var(--steel); }
+/* The light the glass refracts. Fixed, so panes sample a stable field while
+   the page scrolls past. Asymmetric on purpose: evenly spaced pools would
+   make every pane look identical. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(38rem 38rem at 78% 22%, rgba(255, 255, 255, 0.085), transparent 55%),
+    radial-gradient(30rem 30rem at 18% 62%, rgba(255, 255, 255, 0.07), transparent 55%),
+    radial-gradient(62rem 42rem at 10% -10%, rgba(255, 255, 255, 0.13), transparent 62%),
+    radial-gradient(52rem 36rem at 70% 96%, rgba(255, 255, 255, 0.075), transparent 64%);
+}
+
+a { color: var(--chalk); text-underline-offset: 3px; text-decoration-color: rgba(255, 255, 255, 0.3); }
 a:hover { text-decoration-color: var(--chalk); }
 
 code {
   font-family: var(--mono);
   font-size: 0.86em;
-  background: var(--ash);
+  background: var(--pane-strong);
+  border: 1px solid var(--edge);
   color: var(--chalk);
   padding: 2px 6px;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
-:focus-visible { outline: 2px solid var(--chalk); outline-offset: 2px; border-radius: 2px; }
+:focus-visible { outline: 2px solid var(--chalk); outline-offset: 3px; border-radius: 4px; }
 
 .wrap {
   max-width: 1080px;
@@ -48,7 +75,7 @@ code {
   gap: 32px;
 }
 
-/* ---- Masthead ---- */
+/* ---- Masthead: solid, the one thing that is not glass ---- */
 .head { display: grid; gap: 14px; }
 .head h1 {
   font-size: clamp(2.3rem, 7vw, 4.1rem);
@@ -61,15 +88,18 @@ code {
 .lede { color: var(--smoke); max-width: 58ch; margin: 0; font-size: 1rem; }
 .lede strong { color: var(--chalk); font-weight: 600; }
 
-/* ---- Download all: disclosure under the masthead ---- */
+/* ---- Download all ---- */
 .getall { display: grid; gap: 12px; justify-items: start; margin-top: 4px; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .getall-btn { cursor: pointer; font-family: inherit; }
 .getall-panel {
-  border: 1px solid var(--ash);
-  border-radius: 4px;
-  background: var(--coal);
-  padding: 16px 18px;
+  border: 1px solid var(--edge);
+  border-radius: 14px;
+  background: var(--pane);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  box-shadow: inset 0 1px 0 var(--lip), var(--cast);
+  padding: 18px 20px;
   display: grid;
   gap: 14px;
   max-width: 56ch;
@@ -78,7 +108,7 @@ code {
 .getall-opts { display: flex; flex-wrap: wrap; gap: 8px; }
 .getall-opts .btn { cursor: pointer; font-family: inherit; }
 
-/* ---- Progress: one segment per paper ---- */
+/* ---- Progress: the light source of the page ---- */
 .progress { display: grid; gap: 10px; }
 .progress-top {
   display: flex;
@@ -90,9 +120,28 @@ code {
 }
 .progress-count b { color: var(--chalk); font-weight: 600; }
 .progress-pct { font-size: 1.5rem; font-weight: 700; color: var(--chalk); letter-spacing: -0.02em; }
-.ticks { display: flex; gap: 3px; height: 14px; }
-.tickmark { flex: 1 1 0; min-width: 0; background: var(--ash); border-radius: 1px; transition: background-color 0.18s ease; }
-.tickmark.on { background: var(--chalk); }
+.ticks {
+  display: flex;
+  gap: 3px;
+  height: 16px;
+  padding: 3px;
+  border-radius: 8px;
+  background: var(--pane-sunk);
+  border: 1px solid var(--edge);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.tickmark {
+  flex: 1 1 0;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 2px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.tickmark.on {
+  background: var(--chalk);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
 
 /* ---- Sticky filter bar ---- */
 .controls {
@@ -106,23 +155,31 @@ code {
   justify-content: space-between;
   margin-inline: -16px;
   padding: 12px 16px;
-  background: rgba(0, 0, 0, 0.88);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--ash);
+  background: rgba(8, 8, 8, 0.55);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border-bottom: 1px solid var(--edge);
 }
 .controls label { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: var(--smoke); }
 select {
   font: inherit;
   font-size: 0.88rem;
   color: var(--chalk);
-  background: var(--graphite);
-  border: 1px solid var(--ash);
-  border-radius: 3px;
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid var(--edge);
+  border-radius: 8px;
   padding: 7px 10px;
   cursor: pointer;
 }
-select:hover { border-color: var(--steel); }
-.seg { display: inline-flex; border: 1px solid var(--ash); border-radius: 3px; overflow: hidden; }
+select:hover { border-color: var(--edge-bright); }
+.seg {
+  display: inline-flex;
+  border: 1px solid var(--edge);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--pane-sunk);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
 .seg button {
   font: inherit;
   font-size: 0.86rem;
@@ -134,12 +191,12 @@ select:hover { border-color: var(--steel); }
   transition: color 0.15s ease, background-color 0.15s ease;
 }
 .seg button:hover { color: var(--chalk); }
-.seg button + button { border-left: 1px solid var(--ash); }
-.seg button.on { background: var(--chalk); color: var(--black); font-weight: 600; }
+.seg button + button { border-left: 1px solid var(--edge); }
+.seg button.on { background: var(--chalk); color: #000; font-weight: 600; }
 
-/* ---- Year sections: spine on wide screens ---- */
+/* ---- Year sections ---- */
 .year { display: grid; gap: 14px; }
-.year-head { display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--ash); padding-bottom: 8px; }
+.year-head { display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--edge); padding-bottom: 8px; }
 .year-head h2 {
   font-size: clamp(1.7rem, 4vw, 2.2rem);
   font-weight: 700;
@@ -149,7 +206,7 @@ select:hover { border-color: var(--steel); }
   line-height: 1;
 }
 .count { font-size: 0.82rem; color: var(--smoke); }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(258px, 1fr)); gap: 12px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(258px, 1fr)); gap: 14px; }
 
 @media (min-width: 900px) {
   .year { grid-template-columns: 132px 1fr; gap: 28px; align-items: start; }
@@ -157,19 +214,26 @@ select:hover { border-color: var(--steel); }
   .count { display: block; margin-top: 2px; }
 }
 
-/* ---- Cards: unsolved stays bright, solved recedes ---- */
+/* ---- Cards: the glass. Solved panes frost over and recede. ---- */
 .card {
-  background: var(--graphite);
-  border: 1px solid var(--ash);
-  border-radius: 4px;
-  padding: 15px 16px;
+  background: var(--pane);
+  border: 1px solid var(--edge);
+  border-radius: 14px;
+  padding: 16px 17px;
   display: grid;
   gap: 13px;
   min-width: 0;
-  transition: border-color 0.15s ease, background-color 0.2s ease;
+  backdrop-filter: blur(18px) saturate(1.25);
+  -webkit-backdrop-filter: blur(18px) saturate(1.25);
+  box-shadow: inset 0 1px 0 var(--lip), var(--cast);
+  transition: border-color 0.18s ease, background-color 0.25s ease;
 }
-.card:hover { border-color: var(--steel); }
-.card.done { background: var(--coal); border-color: #1f1f1f; }
+.card:hover { border-color: var(--edge-bright); background: var(--pane-strong); }
+.card.done {
+  background: var(--pane-sunk);
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
 .card.done h3 { color: var(--smoke); }
 
 .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
@@ -185,27 +249,45 @@ select:hover { border-color: var(--steel); }
   text-decoration: none;
   font-weight: 600;
   font-size: 0.85rem;
-  padding: 8px 13px;
-  border-radius: 3px;
+  padding: 8px 14px;
+  border-radius: 8px;
   background: var(--chalk);
-  color: var(--black);
-  border: 1px solid var(--chalk);
-  transition: opacity 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  color: #000;
+  border: 1px solid transparent;
+  transition: opacity 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 }
-.btn:hover { opacity: 0.82; }
-.btn.ghost { background: transparent; color: var(--chalk); border-color: var(--ash); font-weight: 500; }
-.btn.ghost:hover { opacity: 1; border-color: var(--steel); }
-.card.done .btn { background: var(--smoke); border-color: var(--smoke); }
+.btn:hover { opacity: 0.85; }
+.btn.ghost {
+  background: var(--pane-strong);
+  color: var(--chalk);
+  border-color: var(--edge);
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.btn.ghost:hover { opacity: 1; border-color: var(--edge-bright); background: rgba(255, 255, 255, 0.13); }
+.card.done .btn { background: var(--smoke); }
+.card.done .btn.ghost { background: var(--pane-sunk); color: var(--smoke); }
 
 .meta { margin: 0; display: grid; gap: 3px; font-size: 0.78rem; color: var(--smoke); }
 .empty { color: var(--smoke); }
 
 /* ---- Footer ---- */
-footer { border-top: 1px solid var(--ash); padding-top: 18px; font-size: 0.85rem; }
+footer { border-top: 1px solid var(--edge); padding-top: 18px; font-size: 0.85rem; }
 .foot-h { font-size: 0.85rem; font-weight: 600; color: var(--chalk); margin: 0 0 8px; }
 footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 22px; }
 footer a { color: var(--smoke); }
 footer a:hover { color: var(--chalk); }
+
+/* Where the browser cannot frost, fall back to opaque panes so nothing
+   degrades into an unreadable low-contrast wash. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .card, .getall-panel { background: #161616; }
+  .controls { background: #0b0b0b; }
+  .ticks, .seg { background: #111; }
+  .btn.ghost { background: #1c1c1c; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
