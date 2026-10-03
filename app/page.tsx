@@ -18,7 +18,7 @@ type Paper = {
 
 const papers = data.papers as Paper[];
 const ARCHIVE = data.archive;
-const STORE = "gatecs-solved-v1";
+const STORE = "gateee-solved-v1";
 
 const years = Array.from(new Set(papers.map((p) => p.year))).sort((a, b) => b - a);
 
@@ -52,7 +52,7 @@ export default function Home() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `gate-cs-papers.${kind}`;
+    a.download = `gate-ee-papers.${kind}`;
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -80,9 +80,9 @@ export default function Home() {
   return (
     <main className="wrap">
       <header className="head">
-        <h1>GATE CS Papers, 2012–2026</h1>
+        <h1>GATE EE Papers, 2012–2026</h1>
         <p className="lede">
-          Every official Computer Science paper from the last fifteen years, shift by shift, with its
+          Every official Electrical Engineering paper from the last fifteen years, shift by shift, with its
           answer key. Open any PDF straight from the source, or take the whole set offline in one go.
         </p>
 

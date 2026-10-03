@@ -1,17 +1,15 @@
-# GATE CS Papers, 2012–2026
+# GATE EE Papers, 2012–2026
 
-**Live site: <https://gatepyq-ten.vercel.app/>**
+A frontend-only Next.js site listing all 22 official GATE Electrical Engineering question papers from the last 15 years, shift by shift, with answer keys. Your "solved" ticks are saved in your browser.
 
-A frontend-only Next.js site listing all 25 official GATE Computer Science question papers from the last 15 years, shift by shift, with answer keys. Your "solved" ticks are saved in your browser.
-
-[![The GATE CS Papers site: frosted glass panels over a dark grey field, papers grouped by year with a progress strip across the top](docs/screenshot.png)](https://gatepyq-ten.vercel.app/)
+[![The GATE EE Papers site: frosted glass panels over a dark grey field, papers grouped by year with a progress strip across the top](docs/screenshot.png)]
 
 ## Run the website
 
     npm install
     npm run dev          # open http://localhost:3000
 
-To build a static site (no server needed, deploy the `out` folder to Vercel, Netlify or GitHub Pages — this repo is deployed at <https://gatepyq-ten.vercel.app/>):
+To build a static site (no server needed, deploy the `out` folder to Vercel, Netlify or GitHub Pages):
 
     npm run build
 

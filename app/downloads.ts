@@ -31,7 +31,7 @@ export function buildJobs(): Job[] {
 export const fileCount = buildJobs().length;
 
 const header = (comment: string) =>
-  `${comment} GATE CS question papers and answer keys, 2012-2026.\n` +
+  `${comment} GATE EE question papers and answer keys, 2012-2026.\n` +
   `${comment} ${fileCount} PDFs into papers/<year>/. Already-downloaded files are skipped.\n` +
   `${comment} Anything that fails is listed at the end; get those from the official archive:\n` +
   `${comment} ${data.archive}\n`;
@@ -40,7 +40,7 @@ export function powershell(): string {
   const rows = buildJobs()
     .map((j) => `  @{D='${j.dir.replace(/\//g, "\\")}';N='${j.name}';U='${j.url}'}`)
     .join("\n");
-  return `${header("#")}# Run:  powershell -ExecutionPolicy Bypass -File gate-cs-papers.ps1
+  return `${header("#")}# Run:  powershell -ExecutionPolicy Bypass -File gate-ee-papers.ps1
 
 $files = @(
 ${rows}
@@ -83,7 +83,7 @@ export function shell(): string {
     .map((j) => `get '${j.dir}' '${j.name}' '${j.url}'`)
     .join("\n");
   return `#!/usr/bin/env bash
-${header("#")}# Run:  bash gate-cs-papers.sh
+${header("#")}# Run:  bash gate-ee-papers.sh
 
 set -u
 done_n=0; skip_n=0; fail=()

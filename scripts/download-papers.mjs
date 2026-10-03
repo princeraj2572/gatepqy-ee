@@ -1,4 +1,4 @@
-// Downloads every GATE CS question paper and answer key into ./papers/<year>/
+// Downloads every GATE EE question paper and answer key into ./papers/<year>/
 // Run from the project folder:  npm run download
 import { mkdir, writeFile, access } from "node:fs/promises";
 import path from "node:path";
@@ -8,11 +8,11 @@ const OUT = path.resolve("papers");
 
 // Other file names the IIT Kharagpur archive has used, tried if the main link fails.
 function alternates(url) {
-  const m = url.match(/^(.*\/)(\d{4})\/cs(\d?)_(\d{4})\.pdf$/);
+  const m = url.match(/^(.*\/)(\d{4})\/ee(\d?)_(\d{4})\.pdf$/);
   if (!m) return [];
   const [, base, y, s] = m;
-  if (!s) return [`${base}${y}/CS_${y}.pdf`];
-  return [`${base}${y}/cs_${y}_${s}.pdf`, `${base}${y}/cs${s}${y}.pdf`, `${base}${y}/CS${s}_${y}.pdf`];
+  if (!s) return [`${base}${y}/EE_${y}.pdf`];
+  return [`${base}${y}/ee_${y}_${s}.pdf`, `${base}${y}/ee${s}${y}.pdf`, `${base}${y}/EE${s}_${y}.pdf`];
 }
 
 async function exists(f) { try { await access(f); return true; } catch { return false; } }

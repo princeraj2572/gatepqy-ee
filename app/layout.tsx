@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "GATE CS Papers",
-  description: "Official GATE Computer Science question papers and answer keys, 2012–2026, shift by shift.",
+  title: "GATE EE Papers",
+  description: "Official GATE Electrical Engineering question papers and answer keys, 2012–2026, shift by shift.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
