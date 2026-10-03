@@ -29,3 +29,7 @@ All papers live in `data/papers.json`. The website and the download script both 
 
 - IIT Madras, GATE 2027 downloads: https://gate2027.iitm.ac.in/download (2021–2026 papers and keys)
 - IIT Kharagpur, previous papers: https://gate.iitkgp.ac.in/old_question_papers.html (2012–2021 papers)
+
+## Credits
+
+Created by [Prince Raj](https://github.com/princeraj2572).

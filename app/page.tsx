@@ -247,6 +247,12 @@ export default function Home() {
             </a>
           </li>
         </ul>
+        <p className="credit">
+          Created by{" "}
+          <a href="https://github.com/princeraj2572" target="_blank" rel="noopener noreferrer">
+            Prince Raj
+          </a>
+        </p>
       </footer>
     </main>
   );

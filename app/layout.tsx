@@ -3,6 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "GATE EE Papers",
+  authors: [{ name: "Prince Raj", url: "https://github.com/princeraj2572" }],
   description: "Official GATE Electrical Engineering question papers and answer keys, 2012–2026, shift by shift.",
 };
 
