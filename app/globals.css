@@ -293,3 +293,6 @@ footer a:hover { color: var(--chalk); }
   * { transition: none !important; }
 }
 .credit { margin: 18px 0 0; color: var(--smoke); }
+.byline { margin: -8px 0 20px; font-size: 0.8rem; color: var(--smoke); }
+.byline a { color: var(--smoke); }
+.byline a:hover { color: var(--chalk); }

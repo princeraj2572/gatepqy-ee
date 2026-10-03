@@ -85,6 +85,12 @@ export default function Home() {
           Every official Electrical Engineering paper from the last fifteen years, shift by shift, with its
           answer key. Open any PDF straight from the source, or take the whole set offline in one go.
         </p>
+        <p className="byline">
+          by{" "}
+          <a href="https://github.com/princeraj2572" target="_blank" rel="noopener noreferrer">
+            Prince Raj
+          </a>
+        </p>
 
         <div className="getall">
           <div className="actions">
